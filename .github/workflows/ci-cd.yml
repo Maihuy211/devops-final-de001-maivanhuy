@@ -74,7 +74,7 @@ jobs:
             cd ~/devops-pratice
             if [ ! -d "devops-practice" ]; then
               echo "Cloning repository..."
-              git clone https://github.com/mhuy211/devops-final-de001-maivanhuy.git devops-practice
+              git clone git@github.com:mhuy211/devops-final-de001-maivanhuy.git devops-practice
             fi
             cd ~/devops-pratice/devops-practice
 
