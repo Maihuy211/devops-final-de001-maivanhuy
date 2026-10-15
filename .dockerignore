@@ -22,3 +22,5 @@ database/
 screenshots/
 submission-content/
 *.md
+
+.env
