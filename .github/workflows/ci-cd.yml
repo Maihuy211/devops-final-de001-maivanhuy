@@ -54,6 +54,7 @@ jobs:
         uses: appleboy/ssh-action@v1
         env:
           MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
@@ -61,7 +62,7 @@ jobs:
           port: ${{ secrets.VPS_PORT }}
           timeout: 30s
           command_timeout: 5m
-          envs: MYSQL_ROOT_PASSWORD
+          envs: MYSQL_ROOT_PASSWORD, GITHUB_TOKEN
           script: |
             set -e
 
@@ -74,7 +75,7 @@ jobs:
             cd ~/devops-pratice
             if [ ! -d "devops-practice" ]; then
               echo "Cloning repository..."
-              git clone git@github.com:mhuy211/devops-final-de001-maivanhuy.git devops-practice
+              git clone https://${GITHUB_TOKEN}@github.com/mhuy211/devops-final-de001-maivanhuy.git devops-practice
             fi
             cd ~/devops-pratice/devops-practice
 
