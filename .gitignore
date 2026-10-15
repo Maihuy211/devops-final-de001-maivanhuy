@@ -4,6 +4,9 @@ build/
 out/
 *.jar
 
+# Gradle wrapper jar (must be committed for CI/CD)
+!gradle/wrapper/gradle-wrapper.jar
+
 # IDE
 .idea/
 .vscode/
